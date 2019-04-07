@@ -19,13 +19,11 @@ void setup() {
   for (int thisNote = 0; thisNote < 8; thisNote++) {
     // ------------- изчисляване на нотите -> четвъртина нота = 1000 / 4, осмина нота = 1000/8 , и т.н..
     int noteDuration = 1000 / noteDurations[thisNote];
-    tone(8, melody[thisNote], noteDuration);
-    digitalWrite(buzzer_pin, HIGH);
+    tone(buzzer_pin, melody[thisNote], noteDuration);
     int pauseBetweenNotes = noteDuration * 1.30;
     delay(pauseBetweenNotes);
     noTone(buzzer_pin);                    // спиране на тоновете
-  }
-  digitalWrite(buzzer_pin, HIGH);        //поставяме пина в HIGH,за да спре да свири
+  }  
 }
 
 void loop() {
