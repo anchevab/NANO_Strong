@@ -3,6 +3,7 @@
   8-ohm speaker on digital pin 8
 */
 #include "pitches.h"                // файл с нотите
+#define buzzer_pin 5
 
 // ---------- ноти в мелодията в масив
 int melody[] = {
@@ -19,12 +20,12 @@ void setup() {
     // ------------- изчисляване на нотите -> четвъртина нота = 1000 / 4, осмина нота = 1000/8 , и т.н..
     int noteDuration = 1000 / noteDurations[thisNote];
     tone(8, melody[thisNote], noteDuration);
-    digitalWrite(8, HIGH);
+    digitalWrite(buzzer_pin, HIGH);
     int pauseBetweenNotes = noteDuration * 1.30;
     delay(pauseBetweenNotes);
-    noTone(8);                    // спиране на тоновете
+    noTone(buzzer_pin);                    // спиране на тоновете
   }
-  digitalWrite(8, HIGH);        //поставяме пина в HIGH,за да спре да свири
+  digitalWrite(buzzer_pin, HIGH);        //поставяме пина в HIGH,за да спре да свири
 }
 
 void loop() {
