@@ -1,6 +1,6 @@
 /*
   Melody with buzzer
-  8-ohm speaker on digital pin 8
+  8-ohm speaker on digital pin 5
 */
 #include "pitches.h"                // файл с нотите
 #define buzzer_pin 5
